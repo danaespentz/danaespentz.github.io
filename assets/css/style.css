@@ -670,29 +670,44 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
 .services .icon-box {
-  padding: 30px;
-  border-radius: 6px;
+  padding: 20px;
+  border-radius: 10px;
   background: #fff;
   transition: ease-in-out 0.3s;
-  height: 350px;
-}
-
-.services .icon-box i {
-  float: left;
-  color: #3498db;
-  font-size: 40px;
-  line-height: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .services .icon-box img {
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  float: left;
-  width: 400px;
-  height: 300px;
-  line-height: 0;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: ease-in-out 0.3s;
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  margin-right: 20px;
+}
+
+.services .icon-box .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.services .icon-box h4 {
+  margin: 0 0 10px 0;
+}
+
+.services .icon-box p {
+  margin: 5px 0;
+}
+
+.services .icon-box i {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding-right: 5px;
 }
 
 .services .icon-box h4 {
