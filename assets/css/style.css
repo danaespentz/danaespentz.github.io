@@ -678,7 +678,6 @@ section {
   transition: ease-in-out 0.3s;
   height: auto;
   display: flex;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -694,26 +693,12 @@ section {
 .services .icon-box .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .services .icon-box h4 {
   margin: 0 0 10px 0;
-}
-
-.services .icon-box p {
-  margin: 5px 0;
-}
-
-.services .icon-box i {
-  font-size: 1rem;
-  vertical-align: middle;
-  padding-right: 5px;
-}
-
-.services .icon-box h4 {
-  margin-left: 70px;
   font-weight: 700;
-  margin-bottom: 15px;
   font-size: 18px;
 }
 
@@ -723,14 +708,34 @@ section {
 }
 
 .services .icon-box p {
-  margin-left: 70px;
+  margin: 5px 0;
   line-height: 24px;
   font-size: 14px;
 }
 
-.services .icon-box:hover {
-  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+.services .icon-box i {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding-right: 5px;
 }
+
+.services .icon-box .btn {
+  margin-top: 10px;
+  align-self: flex-start; /* Aligns the button to the start of the flex container */
+  padding: 5px 10px; /* Adjust padding to make the button smaller */
+  font-size: 0.875rem; /* Smaller font size for the button */
+  background-color: #4ea5e0;
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  color: #fff; /* Button text color */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.services .icon-box .btn:hover {
+  background-color: #3498db; /* Change background color on hover */
+}
+
 
 .services .icon-box:hover h4 a {
   color: #3498db;
