@@ -829,11 +829,16 @@ section {
 
 .portfolio .portfolio-item {
   position: relative;
-  height: 450px;
+  height: 300px;
   overflow: hidden;
 }
 .portfolio .portfolio-wrap {
   margin-left: 40px; /* Adjust margin as needed */
+}
+
+.specifications .portfolio-wrap {
+  margin-left: 0px; /* Adjust margin as needed */
+  width:100%;
 }
 
 .specifications {
@@ -842,9 +847,9 @@ section {
 
 
 .portfolio .portfolio-item figure {
-  background: #000;
+  background: #fffdfd;
   overflow: hidden;
-  height: 400px;
+  height: 200px;
   position: relative;
   border-radius: 4px 4px 0 0;
   margin: 0;
@@ -875,7 +880,7 @@ section {
 
 .portfolio .portfolio-item figure .link-preview i,
 .portfolio .portfolio-item figure .link-details i {
-  color: #384046;
+  color: #ffffff;
   line-height: 0;
 }
 
@@ -895,8 +900,8 @@ section {
 }
 
 .portfolio .portfolio-item figure .link-details {
-  right: calc(50% - 38px);
-  top: calc(50% - 18px);
+  right: calc(0% - 38px);
+  top: calc(0% - 18px);
 }
 
 .portfolio .portfolio-item figure:hover .link-preview {
@@ -906,7 +911,7 @@ section {
 
 .portfolio .portfolio-item figure:hover .link-details {
   opacity: 1;
-  right: calc(50% - 44px);
+  right: calc(0% - 44px);
 }
 
 .portfolio .portfolio-item .portfolio-info {
@@ -1115,7 +1120,7 @@ section {
 }
 
 .team .member p {
-  padding-top: 10px;
+  padding-bottom: 40px;
   font-size: 14px;
   font-style: italic;
   color: #aaaaaa;
@@ -1142,16 +1147,30 @@ section {
 /*--------------------------------------------------------------
 # specifications
 --------------------------------------------------------------*/
-
+.specifications img {
+  display: block;
+  margin: 0 auto; /* Center image */
+  max-width: 100%;
+  height: auto;
+}
+.specifications .section-title {
+  margin-bottom: 10px; /* Smaller margin below the title */
+}
+.specifications .row {
+  justify-content: center;
+  align-items: center;
+}
 .specifications .info-wrap {
-  padding: 30px;
+  padding: 10px 60px 60px; /* Adjusted padding to reduce top space */
   border-radius: 4px;
+  text-align: left; /* Center text */
 }
 
 .specifications .info {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: flex-start; /* Left align items */
+  margin-bottom: 20px; /* Reduced margin between items */
 }
 
 .specifications .btn {
@@ -1161,6 +1180,7 @@ section {
   font-size: 13px;
   letter-spacing: 2px;
   display: inline-block;
+  margin-left:7px;
   padding: 12px 28px;
   border-radius: 4px;
   transition: ease-in-out 0.3s;
@@ -1173,6 +1193,7 @@ section {
 .specifications .info i {
   font-size: 20px;
   color: #3498db;
+  margin-right: 15px; /* Spacing between icon and text */
   width: 44px;
   height: 44px;
   background: #eaf4fb;
@@ -1185,14 +1206,14 @@ section {
 }
 
 .specifications .info h4 {
+  padding: 0;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 5px;
   color: #384046;
 }
 
 .specifications .info p {
-  margin: 0;
+  margin-bottom: 0;
   font-size: 14px;
   color: #65747f;
 }
