@@ -30,6 +30,10 @@
     body {
       overflow-x: hidden;
     }
+    .highlight {
+      color: blue;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -141,8 +145,8 @@
   <section id="what-we-do" class="what-we-do">
     <div class="container">
       <div class="section-title">
-        <p><span class="highlight">Embark</span> on a remarkable adventure with Bono, a stunning boat perfect for exploring the coastal beauty of Athens.<br>Whether you prefer to navigate <span class="highlight">with or without a professional skipper</span>, Bono caters to all your needs, making it ideal for friends and families.<br>Docked at the port of <span class="highlight">Palaio Faliro</span>, Bono provides a fantastic opportunity to create cherished memories on the serene Greek waters.<br><span class="highlight">Book now</span> and experience a day of excitement and fun!</p>
-    </div>
+        <p><span class="highlight">Embark</span> a remarkable adventure with Bono, a stunning boat perfect for exploring the coastal beauty of Athens.<br>Whether you prefer to navigate <span class="highlight">with or without a professional skipper</span>, Bono caters to all your needs, making it ideal for friends and families.<br>Docked at the port of <span class="highlight">Palaio Faliro</span>, Bono provides a fantastic opportunity to create cherished memories on the serene Greek waters.<br><span class="highlight">Book now</span> and experience a day of excitement and fun!</p>
+      </div>
     </div>
   </section><!-- End About Section -->
 
@@ -159,14 +163,14 @@
                 <li><i class="bx bx-sun"></i> Bimini tent</li>
                 <li><i class="bx bx-shower"></i> External shower</li>
                 <li><i class="bx bx-music"></i> Speakers</li>
-                <li><i class="bx bx-bed"></i> Bow sundeck</li>
+                <li><i class="bx bx-bed"></i> Stern sundeck</li>
                 <li><i class="bi bi-ladder"></i> Swimming ladder</li>
               </ul>
             </div>
             <div class="col-md-6">
               <h3>Navigation Equipment</h3>
               <ul class="spec-list">
-                <li><i class="bx bx-anchor"></i> USB port</li>
+                <li><i class="bx bx-anchor"></i> Electric anchor</li>
                 <li><i class="bx bx-map"></i> GPS</li>
                 <li><i class="bx bx-ruler"></i> Depth sounder</li>
                 <li><i class="bx bx-radio"></i> VHF</li>
@@ -178,6 +182,16 @@
     </div>
   </div>
 </section><!-- End Additional Specifications Section -->
+
+<!-- ======= Map Section ======= -->
+<section id="map" class="map">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Location</h2>
+    </div>
+    <div id="map-container" style="width:100%;height:400px;"></div>
+  </div>
+</section><!-- End Map Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact section-bg">
@@ -243,6 +257,22 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- Google Maps Script -->
+  <script>
+    function initMap() {
+      var palaio_faliro = {lat: 37.9335, lng: 23.6814}; // Floisvos Marina coordinates
+      var map = new google.maps.Map(document.getElementById('map-container'), {
+        zoom: 15,
+        center: palaio_faliro
+      });
+      var marker = new google.maps.Marker({
+        position: palaio_faliro,
+        map: map
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFu5Ph0eRWdWkA04HzOQ_4Eee1iUdEB0w&callback=initMap" async defer></script>
+<!-- MY API KEY = AIzaSyDFu5Ph0eRWdWkA04HzOQ_4Eee1iUdEB0w-->
 </body>
 
 </html>
