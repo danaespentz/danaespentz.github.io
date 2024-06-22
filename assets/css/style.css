@@ -714,7 +714,7 @@ section {
   border-radius: 10px;
   background: #fff;
   transition: ease-in-out 0.3s;
-  height: auto;
+  height: 300px;
   display: flex;
   margin-bottom: 20px;
 }
@@ -1233,6 +1233,8 @@ section {
   padding: 30px;
   background: #fff;
   border-radius: 4px;
+  width:1000px;
+  margin: auto;
 }
 
 .contact .info i {
