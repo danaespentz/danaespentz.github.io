@@ -622,89 +622,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  padding: 10px 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #384046;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #e8eaec;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #5faee3;
-}
-
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-.counts {
-  background: white;
-  padding: 30px 0 40px 0;
-}
-
-.counts .count-box {
-  padding: 30px 30px 25px 30px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  background: #fff;
-}
-
-.counts .count-box i {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  background: #3498db;
-  padding: 12px;
-  color: #fff;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-}
-
-.counts .count-box span {
-  font-size: 36px;
-  display: block;
-  font-weight: 600;
-  color: #124364;
-}
-
-.counts .count-box p {
-  padding: 0;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-}
-
-/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 
@@ -829,7 +746,6 @@ section {
 
 .portfolio #portfolio-flters {
   padding: 0;
-  margin: 0 0 35px 0;
   list-style: none;
   text-align: center;
 }
@@ -873,19 +789,48 @@ section {
   height: 300px;
   overflow: hidden;
 }
-.portfolio .portfolio-wrap {
-  margin-left: 40px; /* Adjust margin as needed */
-}
+
 
 .specifications .portfolio-wrap {
   margin-left: 0px; /* Adjust margin as needed */
   width:100%;
 }
 
-.specifications {
-  margin-right: -80px; /* Adjust negative margin as needed */
+/* Center the filter buttons */
+#portfolio-flters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px; /* Add some space below the buttons */
 }
 
+#portfolio-flters li {
+  cursor: pointer;
+  margin: 0 15px; /* Space out the buttons */
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  color: #444;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+#portfolio-flters .filter-active {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Center the portfolio items */
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item {
+  margin: 15px;
+}
 
 .portfolio .portfolio-item figure {
   background: #fffdfd;
@@ -1185,9 +1130,33 @@ section {
   margin: 0 2px;
 }
 
+.info-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.info {
+  flex: 1 1 100%;
+  max-width: 300px; /* Ensure a max-width for smaller screens */
+  box-sizing: border-box;
+}
+
+.portfolio-item {
+  flex: 1 1 100%;
+  max-width: 300px; /* Ensure a max-width for smaller screens */
+  box-sizing: border-box;
+}
+
+
 /*--------------------------------------------------------------
 # specifications
 --------------------------------------------------------------*/
+
+.specifications {
+  margin-right: 0; /* Adjusted negative margin */
+}
+
 .specifications img {
   display: block;
   margin: 0 auto; /* Center image */
@@ -1202,15 +1171,34 @@ section {
   align-items: center;
 }
 .specifications .info-wrap {
+  display: flex;
+  justify-content: space-between;
   padding: 10px 60px 60px; /* Adjusted padding to reduce top space */
   border-radius: 4px;
-  text-align: left; /* Center text */
+  text-align: left; /* Left align text */
 }
 
+.specifications .info-wrap .col-md-6 {
+  flex: 1;
+  margin: 0 20px; /* Add margin to space out the columns */
+}
+
+@media (max-width: 768px) {
+  .specifications .info-wrap {
+    flex-direction: column;
+    padding: 10px 20px 20px; /* Adjust padding for smaller screens */
+  }
+  .specifications .info-wrap .col-md-6 {
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+  .specifications .info-wrap h3 {
+    text-align: center;
+  }
+}
 .specifications .info {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Left align items */
+  justify-content: flex; /* Left align items */
   margin-bottom: 20px; /* Reduced margin between items */
 }
 
@@ -1272,37 +1260,54 @@ section {
   padding: 30px;
   background: #fff;
   border-radius: 4px;
-  width:1000px;
+  width: 100%;
+  max-width: 900px;
   margin: auto;
+  display: flex;
+  justify-content: space-around; /* Space out the items */
+  align-items: center; /* Align items at the center */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact .info {
+  align-items: left;
+  text-align: left;
+  margin: 10px 20px; /* Add some margin between the items */
+  flex: 1;
+  min-width: 200px; /* Ensure items have minimum width */
+}
+
+.contact .info h4 {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #384046;
+  padding: 0 0 0 5px;
 }
 
 .contact .info i {
   font-size: 20px;
   color: #3498db;
   float: left;
-  width: 44px;
-  height: 44px;
   background: #eaf4fb;
   display: flex;
+  width: 44px;
+  height: 44px;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
   transition: all 0.3s ease-in-out;
 }
 
-.contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #384046;
-}
-
 .contact .info p {
-  padding: 0 0 0 60px;
-  margin-bottom: 0;
+  margin: 0;
   font-size: 14px;
   color: #65747f;
+  padding: 0 0 0 60px;
 }
 
 .contact .info:hover i {
@@ -1310,148 +1315,18 @@ section {
   color: #fff;
 }
 
-.contact .php-email-form {
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  border-radius: 4px;
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: #3498db;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #5faee3;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 40px 0;
-  margin-top: 70px;
-}
-
-.breadcrumbs h2 {
-  font-size: 26px;
-  font-weight: 300;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 15px;
-}
-
-.breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li+li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #4f5a62;
-  content: "/";
-}
-
 @media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
+  .contact .info-wrap {
+    flex-direction: column;
+    align-items: stretch;
   }
-
-  .breadcrumbs ol {
-    display: block;
+  .contact .info {
+    text-align: left;
+    align-items: flex-start;
+    margin: 10px 0; /* Adjust margin for mobile */
   }
-
-  .breadcrumbs ol li {
-    display: inline-block;
+  .contact .info h4 {
+    padding: 0;
   }
 }
 
